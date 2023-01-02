@@ -210,8 +210,10 @@ server.get('Content', cache.applyDefaultCache, consentTracking.consent, function
     var searchHelper = require('*/cartridge/scripts/helpers/searchHelpers');
 
     var contentSearch = searchHelper.setupContentSearch(req.querystring);
+    var check='test'
     res.render('/search/contentGrid', {
         contentSearch: contentSearch
+        
     });
     next();
 });
