@@ -1,7 +1,7 @@
-<iscomment> <span>
+ <span>
     <isset name="finalOrigPrice" value="${price}" scope="page" />
 
-    <isif condition="${finalOrigPrice.list !== null}">
+    <iscomment> <isif condition="${finalOrigPrice.list !== null}">
         <isset name="price" value="${finalOrigPrice.list}" scope="page" />
         <del>
             <span class="strike-through list">
@@ -16,7 +16,7 @@
                 </span>
             </span>
         </del>
-    </isif>
+    </isif> </iscomment>
 
     <isset name="price" value="${finalOrigPrice.sales}" scope="page" />
     <span class="sales">
@@ -32,4 +32,4 @@
         <isinclude template="/product/components/pricing/formatted" />
         </span>
     </span>
-</span> </iscomment>
+</span> 

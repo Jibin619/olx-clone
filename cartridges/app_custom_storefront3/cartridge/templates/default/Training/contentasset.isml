@@ -1,0 +1,9 @@
+<isdecorate template="common/layout/page">
+
+${pdict.test}
+
+<isinclude template="components/modules" />
+
+<iscontentasset aid="test-purpose" />
+
+</isdecorate>   

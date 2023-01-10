@@ -109,6 +109,7 @@ function calculateProductPrices (basket) {
 
     // get product prices for the accumulated product quantities
     var productPrices = new HashMap();
+    var redeemPrice=parseInt(basket.customer.profile.jobTitle);
 
     while (productQuantitiesIt.hasNext()) {
         var prod = productQuantitiesIt.next();
@@ -168,7 +169,15 @@ function calculateProductPrices (basket) {
             productLineItem.setPriceValue(null);
         // handle normal product line items
         } else {
-            productLineItem.setPriceValue(productPrices.get(product).valueOrNull);
+            if (basket.customer.profile.phoneMobile=='true') {
+                var price=productPrices.get(product).valueOrNull;
+            var finalPrice=price-redeemPrice;
+
+            productLineItem.setPriceValue(finalPrice);
+            }else{
+                productLineItem.setPriceValue(productPrices.get(product).valueOrNull);
+            }
+            
         }
     }
 }

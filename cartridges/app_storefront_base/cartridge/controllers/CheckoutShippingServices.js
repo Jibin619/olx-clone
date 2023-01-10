@@ -423,10 +423,11 @@ server.post(
                 city: form.shippingAddress.addressFields.city.value,
                 postalCode: form.shippingAddress.addressFields.postalCode.value,
                 countryCode: form.shippingAddress.addressFields.country.value,
-                phone: form.shippingAddress.addressFields.phone.value
+                phone: form.shippingAddress.addressFields.phone.value,
+                secondName:form.shippingAddress.addressFields.phoneSecond.htmlValue
             };
             if (Object.prototype.hasOwnProperty
-                .call(form.shippingAddress.addressFields, 'states')) {
+                .call(form.shippingAddress.addressFields, 'states')) { 
                 result.address.stateCode =
                     form.shippingAddress.addressFields.states.stateCode.value;
             }
